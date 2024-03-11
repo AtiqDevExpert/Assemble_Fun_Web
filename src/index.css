@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.responsive-table li {
+  border-radius: 10px;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.responsive-table .table-header {
+  background-color: #e9e6dd;
+  font-size: 12.5px;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.03em;
+}
+
+.responsive-table .table-row {
+  background-color: #f2ecec;
+  /* box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1); */
+}
+
+.responsive-table .col-1 {
+  flex-basis: 5%;
+}
+
+.responsive-table .col-2 {
+  flex-basis: 20%;
+}
+
+.responsive-table .col-3 {
+  flex-basis: 20%;
+}
+
+.responsive-table .col-4 {
+  flex-basis: 20%;
+}
+.responsive-table .col-5 {
+  flex-basis: 30%;
+}
+.responsive-table .col-6 {
+  flex-basis: 30%;
+}
+
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+
+  .responsive-table li {
+    padding: 15px 15px;
+  }
+
+  .responsive-table .table-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .responsive-table .col {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    padding: 8px 10px;
+  }
+
+  /* .responsive-table .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  } */
+}
+
+.full-screen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the loader appears above other elements */
+}
+
+.horizontal-line {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+}
+
+.location-search-container {
+  position: relative;
+}
+
+.location-search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
+.autocomplete-dropdown-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  max-height: 170px;
+  overflow-y: auto;
+  z-index: 100000;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.b-image {
+  background-image: url("./assets/Login.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .background-image {
+  background: conic-gradient(
+    from 31.2deg at 50% 50%,
+    #FAFF00 0deg,
+    #960002 95.99deg,
+    #C6F1B2 206.25deg,
+    #90A2F8 292.5deg,
+    #C55492 360deg
+  );
+} */
