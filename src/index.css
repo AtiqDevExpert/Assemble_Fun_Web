@@ -148,3 +148,9 @@
     #C55492 360deg
   );
 } */
+.background-image {
+  background-image: url("./assets/Landingpage.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

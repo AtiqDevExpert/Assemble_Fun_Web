@@ -11,7 +11,7 @@ import PlacesAutocomplete, {
 import { toast } from "sonner";
 import { storage } from "../../firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { ClipLoader } from "react-spinners";
+
 import Loader from "../components/Loader";
 import CustomDateTimePicker from "../components/DateTimePicker";
 
@@ -28,8 +28,6 @@ const Events = () => {
   const handleDateChange = (date) => {
     // Format the date as DD-MM-YYYY
     const formattedDate = date.toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-');
-  
-    console.log("handleDateChange", formattedDate);
     setDate(date);
     setEventDate(formattedDate)
   };
@@ -37,8 +35,6 @@ const Events = () => {
   const handleTimeChange = (date) => {
     // Format the time as HH:mm:ss AM/PM
     const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
-  
-    console.log("handleTimeChange", formattedTime);
     setTime(date);
     setEventTime(formattedTime)
   };
@@ -84,6 +80,7 @@ const Events = () => {
   const handleFileChange = async (e) => {
     setLoader(true)
     const file = e.target.files[0];
+    
 
     if (file) {
       try {

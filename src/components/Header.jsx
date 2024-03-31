@@ -23,6 +23,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+
     setLoading(true);
     toast.success("Logout Successfully");
 
@@ -106,7 +107,9 @@ const Header = () => {
   });
 
   const handleDeleteUserByAdmin = (id) => {
+  
     try {
+      setLoading(true);
       axios
         .delete(`${window.$BackEndURL}/api/users/delete/${id}`, config)
         .then((res) => {
@@ -116,9 +119,11 @@ const Header = () => {
             (user) => user._id !== res?.data?.deletedUser?._id
           );
           setAllUsers(updatedUsers);
+          setLoading(false);
         });
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   return (
@@ -179,7 +184,7 @@ const Header = () => {
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
                   <div className="flex flex-col ">
-                    <h2 className="text-gray-900 text-center text-lg">
+                    <h2 className="text-gray-900 text-center text-lg font-semibold">
                       Settings
                     </h2>
                     <span class="horizontal-line rounded-full bg-yellow-300"></span>
@@ -193,6 +198,7 @@ const Header = () => {
                             </span>
                             <span>{user?.role}</span>
                           </div>
+                          {}
                           {user?.role === "Admin" ? (
                             <button
                               className="bg-white rounded-full px-5 py-1 font-medium"
@@ -297,9 +303,9 @@ const Header = () => {
                             </div>
                           </div>
                           <div>
-                          {addUserLoader ? (
+                            {addUserLoader ? (
                               <button
-                              className="bg-black text-white font-medium px-10 py-3 rounded-full flex items-center justify-center"
+                                className="bg-black text-white font-medium px-10 py-3 rounded-full flex items-center justify-center"
                               >
                                 <ClipLoader color="#d2d2d2" size={25} />
                               </button>
@@ -404,7 +410,7 @@ const Header = () => {
                           <div>
                             {adminChangePassLoader ? (
                               <button
-                              className="bg-black text-white font-medium px-10 py-3 rounded-full flex items-center justify-center"
+                                className="bg-black text-white font-medium px-10 py-3 rounded-full flex items-center justify-center"
                               >
                                 <ClipLoader color="#d2d2d2" size={25} />
                               </button>
@@ -427,6 +433,7 @@ const Header = () => {
           </div>
         </Dialog>
       </Transition.Root>
+      
     </>
   );
 };
