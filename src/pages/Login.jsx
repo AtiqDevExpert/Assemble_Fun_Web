@@ -4,46 +4,11 @@ import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 import Loader from "../components/Loader";
-import Landing from "./Landing";
 
 const Login = () => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
-  const [showRealApp ,setShowRealApp] = useState(false);
-  // useEffect(() => {
-   
-  //   const hasLandingPageBeenShown = localStorage.getItem('hasLandingPageBeenShown');
 
-  //   if (!hasLandingPageBeenShown) {
-      
-  //     const timer = setTimeout(() => {
-  //       setShowRealApp(true);
-       
-  //       localStorage.setItem('hasLandingPageBeenShown', 'true');
-  //     }, 4000);
-
-  //     return () => clearTimeout(timer);
-  //   } else {
-     
-  //     setShowRealApp(true);
-  //   }
-  //   const handleBeforeUnload = () => {
-  //     localStorage.removeItem('hasLandingPageBeenShown');
-  //   };
-  //   window.addEventListener('beforeunload', handleBeforeUnload);
-  //   return () => {
-  //     window.removeEventListener('beforeunload', handleBeforeUnload);
-  //   };
-  // }, []);
-  useEffect(() => {
-    // Delay rendering the rest of the page after 4 seconds
-    const timer = setTimeout(() => {
-      setShowRealApp(true);
-    }, 4000);
-
-    // Clear the timer to prevent memory leaks
-    return () => clearTimeout(timer);
-  }, []);
   const Login = useFormik({
     initialValues: {
       email: "",
@@ -85,8 +50,7 @@ const Login = () => {
   });
   return (
     <>
-   
-{showRealApp ? <div className="min-h-screen mx-auto flex flex-col items-center justify-center relative p-4 sm:p-8 b-image">
+<div className="min-h-screen mx-auto flex flex-col items-center justify-center relative p-4 sm:p-8 b-image">
                 
 
                 <div className="absolute top-4 flex items-center justify-center w-full">
@@ -147,9 +111,7 @@ const Login = () => {
                     <h2 className="text-base font-medium">Login</h2>
                   </div>
                 </form>
-              </div> :
-              <Landing/>
-              }
+              </div> 
      
           <Toaster richColors />
           {loader && <Loader />}

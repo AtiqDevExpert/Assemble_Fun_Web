@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Events from "./pages/Events";
 import Protected from "./components/Protected";
+import Landing from "./pages/Landing";
 function App() {
   
 
@@ -24,6 +25,12 @@ function App() {
               <Protected>
                 <Events />
               </Protected>
+            }
+          />
+          <Route
+            path="/contactus"
+            element={
+                <Landing />
             }
           />
         </Routes>
