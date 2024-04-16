@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Events from "./pages/Events";
 import Protected from "./components/Protected";
 import Landing from "./pages/Landing";
+import PrivacyPolicy from "./pages/privacyPolicy";
 function App() {
   return (
     <>
@@ -29,6 +30,12 @@ function App() {
             path="/contactus"
             element={
                 <Landing />
+            }
+          />
+          <Route
+            path="/privacypolicy"
+            element={
+                <PrivacyPolicy />
             }
           />
         </Routes>
