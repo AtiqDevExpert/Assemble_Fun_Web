@@ -1,26 +1,23 @@
 import React from "react";
-
+//   className="slick-list"
+//   style={{
+//     width: 800,
+//     background: "#fff",
+//     margin: "auto",
+//     position: "absolute",
+//     left: "50%",
+//     transform: "translate(-50%, -50%)",
+//     top: "50%",
+//     border: "1px #ddd solid",
+//     padding: "40px",
+//     borderRadius: "10px",
+//     fontFamily: "SF Compact", // Adding SF Compact font family
+//   }}
 const PrivacyPolicy = () => {
   return (
     <>
       <div className="min-h-screen mx-auto flex flex-col items-center justify-center relative p-4 sm:p-8 b-image">
-        <div
-          className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6"
-          //   className="slick-list"
-          //   style={{
-          //     width: 800,
-          //     background: "#fff",
-          //     margin: "auto",
-          //     position: "absolute",
-          //     left: "50%",
-          //     transform: "translate(-50%, -50%)",
-          //     top: "50%",
-          //     border: "1px #ddd solid",
-          //     padding: "40px",
-          //     borderRadius: "10px",
-          //     fontFamily: "SF Compact", // Adding SF Compact font family
-          //   }}
-        >
+        <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6 p-20px">
           <h2 style={{ textAlign: "center", fontSize: 24, margin: 20 }}>
             Privacy Policy
           </h2>
@@ -35,18 +32,42 @@ const PrivacyPolicy = () => {
                 listStyleType: "disc",
               }}
             >
-              Location Data: We collect your location data to provide you with
-              localized event recommendations and updates relevant to your area.
+              <ul style={{ listStyleType: "disc" }}>
+                <li>
+                  Location Data: We collect your location data to provide you
+                  with localized event recommendations and updates relevant to
+                  your area.
+                </li>
+                <li>
+                  Names and Email Addresses: When you create an account with us,
+                  we collect your name and email address to personalize your
+                  experience and facilitate communication regarding events and
+                  account-related matters.
+                </li>
+              </ul>
             </span>
             2. Purpose of Data Collection
+            <p>
+              We collect the aforementioned information for the following
+              purposes:
+            </p>
             <span
               style={{
                 display: "list-item",
                 listStyleType: "disc",
               }}
             >
-              We collect the aforementioned information for the following
-              purposes:
+              <ul style={{ listStyleType: "disc" }}>
+                <li>
+                  Account Creation: Your name and email address are used to
+                  create and manage your account on our platform.
+                </li>
+                <li>
+                  Personalized Recommendations: Your location data enables us to
+                  recommend events and activities tailored to your interests and
+                  geographical location.
+                </li>
+              </ul>
             </span>
             3. Data Storage and Security
             <span
@@ -55,10 +76,14 @@ const PrivacyPolicy = () => {
                 listStyleType: "disc",
               }}
             >
-              We prioritize the security of your personal information. We
-              utilize social login exclusively, ensuring that your data remains
-              protected through the authentication protocols provided by the
-              respective social media platforms.
+              <ul style={{ listStyleType: "disc" }}>
+                <li>
+                  We prioritize the security of your personal information. We
+                  utilize social login exclusively, ensuring that your data
+                  remains protected through the authentication protocols
+                  provided by the respective social media platforms.
+                </li>
+              </ul>
             </span>
             4. Third-Party Services
             <span
